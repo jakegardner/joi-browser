@@ -1,43 +1,26 @@
 {
   "name": "joi-browser",
   "version": "9.0.4",
-  "description": "joi object schema validation bundled for the browser",
+  "description": "joi-browser de-babelified, un-uglified for use with RN",
   "main": "./dist/joi-browser.js",
   "scripts": {
-    "prepublish": "npm run build-webpack",
-    "build-webpack": "webpack && uglifyjs dist/joi-browser.js -c warnings=false -m | ntee dist/joi-browser.min.js | ngzip > dist/joi-browser.min.js.gz"
+    "postinstall": "npm run build-webpack",
+		"build-webpack": "webpack"
   },
   "author": "Jeff Barczewski",
   "license": "MIT",
-  "babel": {
-    "plugins": [
-      "transform-es2015-modules-commonjs",
-      "transform-object-assign"
-    ],
-    "presets": [
-      "es2015"
-    ]
-  },
   "repository": {
     "type": "git",
-    "url": "http://github.com/jeffbski/joi-browser.git"
+    "url": "http://github.com/jakegardner/joi-browser.git"
   },
   "bugs": {
-    "url": "http://github.com/jeffbski/joi-browser/issues"
+    "url": "http://github.com/jakegardner/joi-browser/issues"
   },
-  "devDependencies": {
-    "babel-core": "^6.2.1",
-    "babel-loader": "^6.2.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.2.0",
-    "babel-plugin-transform-object-assign": "^6.8.0",
-    "babel-preset-es2015": "^6.1.18",
+  "dependencies": {
     "joi": "9.0.4",
-    "ngzip": "^1.1.3",
-    "ntee": "^1.1.4",
-    "uglify-js": "^2.6.1",
     "webpack": "^1.12.9"
   },
-  "dependencies": {},
+  "devDependencies": {},
   "peerDependencies": {
     "moment": "2.x.x"
   }
